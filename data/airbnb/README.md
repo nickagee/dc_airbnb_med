@@ -1,0 +1,4 @@
+data obtained from http://insideairbnb.com/washington-dc/
+
+Creative Commons CC0 1.0 Universal (CC0 1.0) "Public Domain Dedication" license.
+https://creativecommons.org/publicdomain/zero/1.0/
