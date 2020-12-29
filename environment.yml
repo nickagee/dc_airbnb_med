@@ -1,0 +1,17 @@
+name: dc_airbnb_analysis
+
+channels:
+  - defauls
+  - conda-forge
+
+dependencies:
+  - python=3.6
+  - numpy
+  - matplotlib
+  - pandas
+  - seaborn
+  - contextily
+  - descartes
+  - geopy
+  - jupyter
+  - jupyterlab
