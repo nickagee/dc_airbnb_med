@@ -2,3 +2,9 @@ pandas
 geopandas
 matplotlib
 seaborn
+numpy
+contextily
+descartes
+geopy
+jupyter
+jupyterlab

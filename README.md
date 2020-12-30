@@ -12,11 +12,13 @@
 
 To install the package needed to run the code/notebooks create/or update a conda environment with the following steps:
 
-
+Create new conda environment
 ```
 $ conda env create -f environment.yml -y
+$ conda activate dc_airbnb_analysis
 ```
 
+Update existing conda environment
 ```
 $ conda activate <environment>
 $ conda isntall --file requirements.txt
