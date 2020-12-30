@@ -18,21 +18,45 @@ def clean_bath_text(x):
 
 
 
-def bar_chart(df, size=(16,14), color='coral'):
+def bar_chart(df, title, xlabel, ylabel, size=(16,14), color='coral', save=False, barlabel=False, barlable_rotate=0):
     """
     Creates a quick Bar Chart with Matplotlib!
     
     df: Dataframe you want to graph
+    tite: Set title for chart
+    xlabel: Set X Axis label
+    ylabel: Set Y Axis label
     size: Size of the output chart. Accepts Tuple (ex. (12,12)). Default[(16,14)]
     color: Color name you want the bars to be. Accepts matplotlib colors https://matplotlib.org/tutorials/colors/colors.html Default['coral']
+    save: Boolean for saving chart as a png
+    barlabel: Boolean to label bar with value
+    barlable_rotate: Number for the angle you want your bar label to be set at
     """
-    ax = df.plot(kind='bar', figsize=size, color=color, fontsize=13);
-    ax.set_alpha(0.8)
-    ax.set_title("Mean Price by Neiborhood", fontsize=18)
-    ax.set_xlabel("Neighborhood", fontsize=12)
-    ax.set_ylabel("Price($)", fontsize=12);
-    
-    return plt.show()
+    if save:
+        name = title.replace(" ", "_")
+        ax = df.plot(kind='bar', figsize=size, color=color, fontsize=13);
+        ax.set_alpha(0.8)
+        ax.set_title(title, fontsize=18)
+        ax.set_xlabel(xlabel, fontsize=12)
+        ax.set_ylabel(ylabel, fontsize=12)
+        
+        if barlabel:
+            for p in ax.patches:
+                ax.annotate(str(round(p.get_height(), 3)), (p.get_x()+0.1, p.get_height()+2), fontsize=12, rotation=barlable_rotate)
+            
+        fig = plt.gcf();
+        plt.show();
+        plt.draw();
+        fig.savefig("bar_chart_"+name+".png", bbox_inches='tight')
+        return 
+    else:
+        ax = df.plot(kind='bar', figsize=size, color=color, fontsize=13);
+        ax.set_alpha(0.8)
+        ax.set_title(title, fontsize=18)
+        ax.set_xlabel(xlabel, fontsize=12)
+        ax.set_ylabel(ylabel, fontsize=12);
+        plt.show();
+        return
 
 
 def cat_map(gdf, column, title, size=(20, 20), alpha=0.5):
