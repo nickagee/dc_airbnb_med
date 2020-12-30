@@ -10,7 +10,17 @@
 
 ## Installation <a name="installation"></a>
 
-There should be no necessary libraries to run the code here beyond the Anaconda distribution of Python.  The code should run with no issues using Python versions 3.*.
+To install the package needed to run the code/notebooks create/or update a conda environment with the following steps:
+
+
+```
+$ conda env create -f environment.yml -y
+```
+
+```
+$ conda activate <environment
+$ conda isntall --file requirements.txt
+```
 
 ## Project Motivation<a name="motivation"></a>
 
