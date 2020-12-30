@@ -18,7 +18,7 @@ $ conda env create -f environment.yml -y
 ```
 
 ```
-$ conda activate <environment
+$ conda activate <environment>
 $ conda isntall --file requirements.txt
 ```
 
