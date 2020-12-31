@@ -18,7 +18,7 @@ def clean_bath_text(x):
 
 
 
-def bar_chart(df, title, xlabel, ylabel, size=(16,14), color='coral', save=False, barlabel=False, barlable_rotate=0):
+def bar_chart(df, title, xlabel, ylabel, size=(16,14), color='coral', save=False, barlabel=False, barlabel_rotate=0):
     """
     Creates a quick Bar Chart with Matplotlib!
     
@@ -42,7 +42,7 @@ def bar_chart(df, title, xlabel, ylabel, size=(16,14), color='coral', save=False
         
         if barlabel:
             for p in ax.patches:
-                ax.annotate(str(round(p.get_height(), 3)), (p.get_x()+0.1, p.get_height()+2), fontsize=12, rotation=barlable_rotate)
+                ax.annotate(str(round(p.get_height(), 3)), (p.get_x()+0.1, p.get_height()+2), fontsize=12, rotation=barlabel_rotate)
             
         fig = plt.gcf();
         plt.show();
