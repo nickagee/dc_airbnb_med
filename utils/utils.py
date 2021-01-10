@@ -17,7 +17,6 @@ def clean_bath_text(x):
     return(x)
 
 
-
 def bar_chart(df, title, xlabel, ylabel, size=(16,14), color='coral', save=False, barlabel=False, barlabel_rotate=0):
     """
     Creates a quick Bar Chart with Matplotlib!
@@ -72,4 +71,28 @@ def cat_map(gdf, column, title, size=(20, 20), alpha=0.5):
     gdf_webmerc = gdf.to_crs(epsg=3857)
     ax = gdf_webmerc.plot(figsize=size, column=column, categorical="True", alpha=alpha)
     ax.set(title=title)
-    return ctx.add_basemap(ax)
+    ax.axis('off')
+
+    return ctx.add_basemap(ax, source=ctx.providers.OpenStreetMap.Mapnik)
+
+
+def chor_map(gdf, column, title, size=(20, 20), alpha=0.5):
+    """
+    Creates a quick Choropleth Map with Contextily
+    
+    gdf: GeoPandas GeoDataFrame that you want to map.
+    column: Column name that you want to group by in your map.
+    title: Add a title to your map.
+    size: Size of the output map. Accepts Tuple (ex. (12,12)). Default[(20,20)]
+    alpha: Transparency 0.0 - 1.0. Default[0.5]
+    """
+    
+    gdf_webmerc = gdf.to_crs(epsg=3857)
+    ax = gdf_webmerc.plot(column=column, cmap = 'coolwarm', figsize=size, scheme='quantiles', k=4, alpha=alpha, edgecolor='white', linewidth=3, legend=True,legend_kwds=dict(loc='best', facecolor='white',framealpha=1));
+    ax.set_title(label=title, fontdict={'fontsize':20})
+    ctx.add_basemap(ax, source=ctx.providers.OpenStreetMap.Mapnik)
+    ax.axis('off')
+    for x, y, label in zip(gdf_webmerc.centroid.x, gdf_webmerc.centroid.y, gdf_webmerc[column]):
+        ax.annotate(round(label, 2), xy=(x, y),horizontalalignment='center', fontsize=14, fontweight='bold')
+        # show the subplot
+        ax.figure
