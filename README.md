@@ -42,11 +42,11 @@ For this project, I was interestested in understanding which DC neighborhood wou
 
 There are two notebooks that will walk you through my analysis of these questions, and all the data needed is in the `data/` folder.  
 
-There is an additional haler `.py` file that will clean some of the data that is obtained from other sources.
+There is an additional helper `.py` file that will clean some of the data that is obtained from other sources.
 
 ## Results<a name="results"></a>
 
-The main findings of the code can be found at the post available [here]().
+The main findings of the code can be found at the post available [here](https://njackson-gis.medium.com/finding-the-best-neighborhood-for-an-airbnb-property-45fce69ac011).
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 
