@@ -86,7 +86,7 @@ def chor_map(gdf, column, title, size=(20, 20), alpha=0.5):
     size: Size of the output map. Accepts Tuple (ex. (12,12)). Default[(20,20)]
     alpha: Transparency 0.0 - 1.0. Default[0.5]
     """
-    
+    file_name = title.replace(" ", "_")
     gdf_webmerc = gdf.to_crs(epsg=3857)
     ax = gdf_webmerc.plot(column=column, cmap = 'coolwarm', figsize=size, scheme='quantiles', k=4, alpha=alpha, edgecolor='white', linewidth=3, legend=True,legend_kwds=dict(loc='best', facecolor='white',framealpha=1));
     ax.set_title(label=title, fontdict={'fontsize':20})
@@ -96,3 +96,6 @@ def chor_map(gdf, column, title, size=(20, 20), alpha=0.5):
         ax.annotate(round(label, 2), xy=(x, y),horizontalalignment='center', fontsize=14, fontweight='bold')
         # show the subplot
         ax.figure
+    
+#     plt.tight_layout()
+    plt.savefig(file_name+".png", dpi=200, bbox_inches='tight')
