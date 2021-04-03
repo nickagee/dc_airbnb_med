@@ -1,5 +1,10 @@
 # Analysis of Airbnb data for Washington, DC.
 
+## Medium Post
+
+This repo is for a medium post that I completed for my Udacity Nanodegree in Data Science.
+[Here is the link to the post on Medium](https://njackson-gis.medium.com/finding-the-best-neighborhood-for-an-airbnb-property-45fce69ac011)
+
 ### Table of Contents
 
 1. [Installation](#installation)
