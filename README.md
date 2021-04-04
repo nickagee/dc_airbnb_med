@@ -35,7 +35,7 @@ For this project, I was interestested in understanding which DC neighborhood wou
 
 1. Which DC Neighborhood has the highest average price per listing?
 2. Which DC Neighborhood's Airbnb market is saturated?
-3. Which DC Neighborhood has the highest rated listings?
+3. How well does the data predict Airbnb Listing Price?
 4. Are there any other factors that I need to review before investing in a property?
 
 ## File Descriptions <a name="files"></a>
